@@ -5,7 +5,7 @@ const createBlog = async function(req,res){
     try{
         let data2 = req.body
        let authorId = req.body
-        if(!authorId) res.status(400).send({status:false, msg: "author does not exist !!"})
+        if(!authorId) {res.status(400).send({status:false, msg: "author does not exist !!"})}
         let savedBlog = await blogModel.create(data2)
         res.status(201).send({status:true, msg: savedBlog})
     }
@@ -31,6 +31,6 @@ const getBlog = async function(req,res){
 
 
 module.exports.createBlog = createBlog
-module.exports.createBlog = createBlog
+module.exports.getBlog = getBlog
 
 
