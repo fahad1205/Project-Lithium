@@ -7,7 +7,7 @@ const creatAuthor = async function (req, res){
     let data1 = req.body
     if(!nameRegex.test(req.body.fname)){
         return res.status(400).send({status:false, msg: "fname is invalid"})
-    }
+    };
     if(!password){
         return res.status(400).send({status: false, msg: "password not found"})
     }
